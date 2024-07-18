@@ -1,0 +1,64 @@
+# Funciones en python
+# Las funciones son habitantes de primer orden
+# Las funciones estan conformadas por parametros y argumentos.
+
+# Ejercicio sin funciones
+
+nombre = "Joel"
+nombre2 = "Eiver"
+nombre3 = "Leonardo"
+nombre4 = "Pedro"
+nombre5 = "Angel"
+
+print(f"Hola, {nombre}")
+print(f"Hola, {nombre2}")
+print(f"Hola, {nombre3}")
+print(f"Hola, {nombre4}")
+print(f"Hola, {nombre5}")
+
+print("*"*40)
+
+# Palabra reservada (def); indentificacion unica (parametro)
+def saludo(name: str):
+    print(f"Hola, {name}")
+
+# Invocar a la funcion =saludo("Joel") = invocar("argumentos")
+saludo("Joel")
+saludo("Eiver")
+saludo("Leonardo")
+saludo("Pedro")
+saludo("Angel")
+
+print("*"*40)
+
+# Funcion sin parametros ni argumentos
+
+def funcion_sin_parametros_ni_argumentos():
+    print("Funcion sin parametros ni argumentos")
+
+# Invocar o llamar
+
+funcion_sin_parametros_ni_argumentos()
+
+"""
+Reto
+1.- Crear una funcion que me permita sumar dos valores. Quiero que contenga valores estrictos que debe recibir la funcion
+
+2.- Crea una fiesta tematica donde tienen que mostrar o imprimir el nombre del invitado y el personaje del cual va disfrazado
+"""
+
+print("*"*40)
+
+def suma(num: int, num2: int):
+    print(f"Primera suma, {num + num2}")
+
+suma(2, 3)
+suma(5, 2)
+
+print("*"*40)
+
+def invitados(invitados:str,disfraz:str):
+    print(f"Hola, {invitados} como {disfraz}")
+
+invitados("Cesar","Batman")
+    
