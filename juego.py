@@ -20,6 +20,15 @@ player_height = 50
 player = pygame.Rect(WIDTH // 2 - player_width // 2, 
                      HEIGHT - player_height - 10,player_width, player_height)
 
+# Meteoritos
+meteor_width = 30
+meteor_height = 30
+meteors = []
+
+# Puntuación
+score = 0
+font = pygame.font.Font(None, size=36)
+
 
 # Reloj para controlar FPS
 clock = pygame.time.Clock()
@@ -41,8 +50,33 @@ while running:
     if keys[pygame.K_DOWN] and player.bottom < HEIGHT:
         player.y += 5
 
+    # Generar meteoritos
+    if len(meteors) < 7:
+        meteor = pygame.Rect(random.randint(0, WIDTH - meteor_width),
+                         0, meteor_width, meteor_height)
+        meteors.append(meteor)
+
+    # Mover meteoritos
+    for meteor in meteors:
+        meteor.y += 5
+        if meteor.top > HEIGHT:
+            meteors.remove(meteor)
+
+    # Detectar colisiones        
+    for meteor in meteors:
+        if player.colliderect(meteor):
+            running = False
+
+
+
     screen.fill(BLACK)
     pygame.draw.rect(screen, WHITE, player)
+    for meteor in meteors:
+        pygame.draw.rect(screen, RED, meteor)
+
+    # Mostrar puntuación
+    score_text = font.render(text=f"Puntuación: {score}", antialias=True, color=WHITE)
+    screen.blit(score_text, dest=(10, 10))
 
     pygame.display.flip()
     clock.tick(60)
