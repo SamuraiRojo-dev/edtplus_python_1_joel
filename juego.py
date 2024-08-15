@@ -39,7 +39,7 @@ while running:
     for event in pygame.event.get():
         if event.type ==pygame.QUIT:
             running = False
-
+            
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and player.left > 0:
         player.x -= 5
@@ -75,8 +75,8 @@ while running:
         pygame.draw.rect(screen, RED, meteor)
 
     # Mostrar puntuación
-    score_text = font.render(text=f"Puntuación: {score}", antialias=True, color=WHITE)
-    screen.blit(score_text, dest=(10, 10))
+    text = font.render(f"Puntuación: {score}", True, WHITE)
+    screen.blit(text, (10, 10))
 
     pygame.display.flip()
     clock.tick(60)
