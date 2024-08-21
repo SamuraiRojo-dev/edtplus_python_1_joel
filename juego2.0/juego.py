@@ -18,7 +18,7 @@ RED = (255, 0, 0)
 player_width = 40
 player_height = 40
 player = pygame.Rect(WIDTH // 2 - player_width // 2, 
-                     HEIGHT - player_height - 10,player_width, player_height)
+                     HEIGHT - player_height - 10, player_width, player_height)
 
 # Cargar imágenes
 player_img = pygame.image.load("juego2.0/nave.png").convert_alpha()
@@ -52,7 +52,7 @@ clock = pygame.time.Clock()
 running = True
 while running:
     for event in pygame.event.get():
-        if event.type ==pygame.QUIT:
+        if event.type == pygame.QUIT:
             running = False
 
     keys = pygame.key.get_pressed()
