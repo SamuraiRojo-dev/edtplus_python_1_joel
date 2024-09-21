@@ -6,15 +6,15 @@ pygame.init()
 # Configurar la pantalla
 WIDTH = 800
 HEIGHT = 600
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT)) # Resolucion de la pantalla
 pygame.display.set_caption("Lluvia Espacial")
 
-# Colores
+# Tuplas Colores en formato RGB 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 
-# Jugador
+# Jugador (configurar ancho/alto)
 player_width = 40
 player_height = 40
 player = pygame.Rect(WIDTH // 2 - player_width // 2, 
